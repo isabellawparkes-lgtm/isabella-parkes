@@ -1,0 +1,120 @@
+---
+title: ""
+page-layout: full
+---
+
+```{=html}
+<canvas id="gradient-canvas" aria-hidden="true"></canvas>
+
+<div class="page">
+
+  <header class="info-grid">
+
+
+
+    <section class="info-block contact" id="contact">
+      <div>Cambridge, UK</div>
+
+      <div class="small-gap"></div>
+
+      <div class="small-gap"></div>
+
+      <a href="mailto:ip451@cam.ac.uk">
+        ip451@cam.ac.uk
+      </a>
+      <a href="mailto:isabellawparkes@gmail.com">
+        isabellawparkes@gmail.com
+      </a>
+
+      <div class="small-gap"></div>
+
+      <a href="https://orcid.org/0009-0004-3506-6250">ORCID</a>
+
+      <div class="bio">
+        Isabella Parkes is a researcher in English literature whose work focuses on modern and contemporary writing, technology and accelerationism. She is currently undertaking a PhD in English at the University of Cambridge, where her research examines the literary history of accelerationism.
+      </div>
+    </section>
+
+
+    <section class="info-block" id="education">
+
+      <div class="entry">
+        <div>2026–</div>
+        <div>PhD English</div>
+        <div class="institution">University of Cambridge</div>
+      </div>
+
+      <div class="entry">
+        <div>2023–2025</div>
+        <div>MA English Literature &</div>
+        <div>American Studies</div>
+        <div class="institution">University of Manchester</div>
+        <div>Distinction</div>
+      </div>
+
+      <div class="entry">
+        <div>2017–2021</div>
+        <div>English Literature</div>
+        <div class="institution">University of Edinburgh</div>
+        <div>First Class</div>
+      </div>
+
+    </section>
+
+
+    <section class="info-block" id="publications">
+
+      <div class="entry">
+        <div>Forthcoming 2027</div>
+
+        <div class="work-title">
+          ‘A poet pure and simple’:
+          Gissing, Class, and the
+          Bohemian Ideal
+        </div>
+
+        <div>
+          <em>Bulletin of the John Rylands Library</em>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div>Awards</div>
+
+        <div class="work-title">
+          Margaret Johnson (Yates)
+          Prize
+        </div>
+        <div>Awarded for the highest dissertation mark in English, American Studies and Creative Writing</div>
+
+        <div class="work-title">
+          Faculty of Humanities
+          Dean's Award for Achievement
+        </div>
+        <div>Awarded by the University of Manchester</div>
+      </div>
+
+    </section>
+
+  </header>
+
+
+  <div class="page-space"></div>
+
+
+  <footer class="footer-grid">
+
+    <div class="identity-footer">
+      <img class="portrait" src="me.jpeg" alt="Isabella Parkes">
+
+      <h1 class="name">
+        Isabella Parkes
+      </h1>
+    </div>
+
+  </footer>
+
+</div>
+```
+
+<script type="module" src="gradient.js"></script>

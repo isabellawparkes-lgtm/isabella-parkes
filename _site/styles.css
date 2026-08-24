@@ -1,0 +1,540 @@
+/* =========================================================
+   ISABELLA PARKES
+   Single-page academic profile
+   ========================================================= */
+
+:root {
+  --black: #111111;
+  --blue: #1537ff;
+  --white: #f8f9ff;
+}
+
+
+/* ---------- RESET ---------- */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  overflow-x: hidden;
+
+  color: var(--black);
+
+  font-family:
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    sans-serif;
+
+  font-weight: 400;
+
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+}
+
+
+/* Force Helvetica everywhere */
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+div,
+span,
+section,
+footer,
+header {
+  font-family:
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    sans-serif;
+}
+
+
+/* Remove Quarto's normal layout */
+
+#quarto-content,
+.page-columns,
+.page-layout-full,
+main.content {
+  display: contents !important;
+}
+
+.quarto-title-block,
+#quarto-header,
+.nav-footer {
+  display: none !important;
+}
+
+
+/* =========================================================
+   WEBGL BACKGROUND
+   ========================================================= */
+
+#gradient-canvas {
+  position: fixed;
+
+  inset: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  z-index: -2;
+
+  display: block;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff 0%,
+      #e8edff 35%,
+      #2346ff 100%
+    );
+}
+
+
+/* White veil keeps text extremely legible */
+
+body::before {
+  content: "";
+
+  position: fixed;
+  inset: 0;
+
+  z-index: -1;
+
+  background:
+    rgba(255, 255, 255, 0.11);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   PAGE
+   ========================================================= */
+
+.page {
+  position: relative;
+
+  display: grid;
+
+  grid-template-rows:
+    auto
+    1fr
+    auto;
+
+  min-height: 100svh;
+
+  width: 100%;
+
+  padding:
+    17px
+    22px
+    15px
+    21px;
+}
+
+
+/* =========================================================
+   TOP INFORMATION GRID
+   ========================================================= */
+
+.info-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(260px, 1.35fr)
+    minmax(180px, 1fr)
+    minmax(220px, 1.2fr)
+    minmax(170px, 1fr);
+
+  column-gap: clamp(18px, 3.2vw, 64px);
+
+  align-items: start;
+
+  width: 100%;
+}
+
+
+/* Tiny text like reference */
+
+.info-block {
+  min-width: 0;
+
+  position: relative;
+  z-index: 1;
+
+  font-size: clamp(10px, 0.7vw, 11px);
+
+  line-height: 1.04;
+
+  letter-spacing: -0.025em;
+}
+
+
+.contact {
+  grid-column: 1;
+}
+
+
+.bio {
+  max-width: 420px;
+
+  margin-top: 16px;
+
+  font-size: inherit;
+
+  line-height: 1.15;
+}
+
+
+/* Information groups */
+
+.entry {
+  margin-bottom: 12px;
+  font-weight: 400;
+
+}
+
+.small-gap {
+  height: 7px;
+}
+
+.block-spacer {
+  height: 8px;
+}
+
+
+/* Slight emphasis without changing font */
+
+.label,
+.work-title {
+  font-weight: 500;
+}
+
+
+.institution {
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   LINKS
+   ========================================================= */
+
+a {
+  display: block;
+
+  position: relative;
+
+  width: fit-content;
+
+  color: inherit;
+
+  text-decoration: none;
+
+  transition: color 180ms ease, transform 180ms ease;
+}
+
+a::after {
+  content: "";
+
+  position: absolute;
+  right: 0;
+  bottom: -2px;
+  left: 0;
+
+  height: 1px;
+
+  background: currentColor;
+
+  transform: scaleX(0);
+  transform-origin: left;
+
+  transition: transform 180ms ease;
+}
+
+a:hover {
+  color: var(--blue);
+
+  transform: translateX(2px);
+
+  animation: link-wiggle 420ms ease both;
+}
+
+a:hover::after {
+  transform: scaleX(1);
+}
+
+@keyframes link-wiggle {
+  0%,
+  100% {
+    rotate: 0deg;
+  }
+
+  35% {
+    rotate: -1deg;
+  }
+
+  70% {
+    rotate: 1deg;
+  }
+}
+
+
+/* =========================================================
+   EMPTY MIDDLE
+   ========================================================= */
+
+.page-space {
+  min-height: 0;
+}
+
+
+/* =========================================================
+   FOOTER COMPOSITION
+   ========================================================= */
+
+.footer-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(180px, 19vw);
+
+  align-items: end;
+
+  gap: 40px;
+
+  width: 100%;
+}
+
+
+/* Portrait and name */
+
+.identity-footer {
+  min-width: 0;
+}
+
+.portrait {
+  display: block;
+
+  width: clamp(210px, 17vw, 270px);
+  aspect-ratio: 1;
+
+  margin-bottom: 12px;
+
+  object-fit: cover;
+}
+
+.name {
+  margin: 0;
+
+  padding: 0;
+
+  font-size:
+    clamp(72px, 8vw, 145px);
+
+  font-weight: 400;
+
+  line-height: 0.8;
+
+  ;
+
+  white-space: nowrap;
+
+  color: var(--black);
+}
+
+
+/* Bottom-right description */
+
+/* =========================================================
+   SUBTLE INTERACTION
+   ========================================================= */
+
+.info-block,
+.name {
+  opacity: 1;
+
+  transition: opacity 180ms ease;
+}
+
+
+.info-grid:has(.info-block:hover)
+.info-block:not(:hover) {
+  opacity: 0.55;
+}
+
+@media (min-width: 801px) and (max-width: 1100px) {
+
+  .info-grid {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+  }
+
+
+  .bio {
+    max-width: 300px;
+  }
+
+
+  .name {
+    font-size:
+      clamp(64px, 9vw, 96px);
+  }
+
+
+  .portrait {
+    width: 80px;
+  }
+
+}
+
+
+@media (min-width: 801px) {
+
+  html,
+  body {
+    overflow-y: hidden;
+  }
+
+}
+
+.portrait {
+  opacity: 1;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+  .page {
+    grid-template-rows:
+      auto
+      auto
+      auto;
+
+    align-content: start;
+
+    min-height: 100svh;
+
+    padding:
+      10px
+      16px
+      10px;
+  }
+
+
+  .info-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap:
+      8px
+      16px;
+  }
+
+
+  .contact {
+    grid-column: span 2;
+  }
+
+
+  .info-block {
+    font-size: 10px;
+
+    line-height: 1.08;
+  }
+
+
+  .entry {
+    margin-bottom: 8px;
+  }
+
+
+  .page-space {
+    min-height: 0;
+  }
+
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+
+    gap: 14px;
+  }
+
+
+  .name {
+    font-size:
+      clamp(48px, 14vw, 72px);
+
+    line-height: 0.8;
+
+    white-space: normal;
+  }
+
+
+  .portrait {
+    width: clamp(112px, 32vw, 145px);
+
+    margin-bottom: 4px;
+  }
+
+
+}
+
+
+/* =========================================================
+   VERY SMALL SCREENS
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  .info-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+
+  .name {
+    letter-spacing: -0.065em;
+  }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+  }
+
+}

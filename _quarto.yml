@@ -1,0 +1,15 @@
+project:
+  type: website
+
+website:
+  title: "Isabella Parkes"
+  navbar: false
+
+format:
+  html:
+    theme: none
+    css: styles.css
+    toc: false
+    include-in-header:
+      text: |
+        <meta name="viewport" content="width=device-width, initial-scale=1">
