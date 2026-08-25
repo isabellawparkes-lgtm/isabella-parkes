@@ -340,7 +340,7 @@ a:hover::after {
 .portrait {
   display: block;
 
-  width: clamp(160px, 12vw, 220px);
+  width: clamp(120px, 9vw, 170px);
   aspect-ratio: 1;
 
   margin-bottom: 12px;
@@ -407,7 +407,7 @@ a:hover::after {
 
 
   .portrait {
-    width: 64px;
+    width: 56px;
   }
 
 }
@@ -500,7 +500,7 @@ a:hover::after {
 
 
   .portrait {
-    width: clamp(80px, 22vw, 110px);
+    width: clamp(64px, 18vw, 90px);
 
     margin-bottom: 4px;
   }
