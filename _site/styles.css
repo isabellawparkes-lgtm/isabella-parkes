@@ -144,6 +144,8 @@ body::before {
 
   min-height: 100svh;
 
+  min-height: 100dvh;
+
   width: 100%;
 
   padding:
@@ -338,7 +340,7 @@ a:hover::after {
 .portrait {
   display: block;
 
-  width: clamp(210px, 17vw, 270px);
+  width: clamp(160px, 12vw, 220px);
   aspect-ratio: 1;
 
   margin-bottom: 12px;
@@ -405,7 +407,7 @@ a:hover::after {
 
 
   .portrait {
-    width: 80px;
+    width: 64px;
   }
 
 }
@@ -434,12 +436,12 @@ a:hover::after {
   .page {
     grid-template-rows:
       auto
-      auto
+      1fr
       auto;
 
-    align-content: start;
-
     min-height: 100svh;
+
+    min-height: 100dvh;
 
     padding:
       10px
@@ -498,7 +500,7 @@ a:hover::after {
 
 
   .portrait {
-    width: clamp(112px, 32vw, 145px);
+    width: clamp(80px, 22vw, 110px);
 
     margin-bottom: 4px;
   }
