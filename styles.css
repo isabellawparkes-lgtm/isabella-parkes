@@ -1,542 +1,186 @@
-/* =========================================================
-   ISABELLA PARKES
-   Single-page academic profile
-   ========================================================= */
-
+/* Gig-poster typography for Isabella Parkes' Quarto profile. */
 :root {
-  --black: #111111;
-  --blue: #1537ff;
-  --white: #f8f9ff;
+  --paper: #fffefa;
+  --ink: #111111;
+  --orange: #ff7300;
+  --pink: #f00091;
+  --cyan: #00c5e8;
+  --violet: #5134ee;
+  --mustard: #d2b52d;
 }
-
-
-/* ---------- RESET ---------- */
-
-* {
-  box-sizing: border-box;
-}
-
-html,
+* { box-sizing: border-box; }
+html { background: var(--paper); }
 body {
   margin: 0;
-  width: 100%;
-  min-height: 100%;
-}
-
-html {
-  font-size: 16px;
-}
-
-body {
-  overflow-x: hidden;
-
-  color: var(--black);
-
-  font-family:
-    "Helvetica Neue",
-    Helvetica,
-    Arial,
-    sans-serif;
-
-  font-weight: 400;
-
+  color: var(--ink);
+  background: var(--paper);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.45;
   -webkit-font-smoothing: antialiased;
-  text-rendering: geometricPrecision;
 }
-
-
-/* Force Helvetica everywhere */
-
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-a,
-div,
-span,
-section,
-footer,
-header {
-  font-family:
-    "Helvetica Neue",
-    Helvetica,
-    Arial,
-    sans-serif;
+#quarto-content, .page-columns, .page-layout-full {
+  display: block !important;
 }
-
-
-/* Remove Quarto's normal layout */
-
-#quarto-content,
-.page-columns,
-.page-layout-full,
 main.content {
-  display: contents !important;
-}
-
-.quarto-title-block,
-#quarto-header,
-.nav-footer {
-  display: none !important;
-}
-
-
-/* =========================================================
-   WEBGL BACKGROUND
-   ========================================================= */
-
-#gradient-canvas {
-  position: fixed;
-
-  inset: 0;
-
-  width: 100vw;
-  height: 100vh;
-
-  z-index: -2;
-
   display: block;
-
-  background:
-    linear-gradient(
-      135deg,
-      #ffffff 0%,
-      #e8edff 35%,
-      #2346ff 100%
-    );
-}
-
-
-/* White veil keeps text extremely legible */
-
-body::before {
-  content: "";
-
-  position: fixed;
-  inset: 0;
-
-  z-index: -1;
-
-  background:
-    rgba(255, 255, 255, 0.11);
-
-  pointer-events: none;
-}
-
-
-/* =========================================================
-   PAGE
-   ========================================================= */
-
-.page {
-  position: relative;
-
-  display: grid;
-
-  grid-template-rows:
-    auto
-    1fr
-    auto;
-
-  min-height: 100svh;
-
-  min-height: 100dvh;
-
   width: 100%;
-
-  padding:
-    17px
-    22px
-    15px
-    21px;
+  max-width: none;
+  margin: 0;
+  padding: 0;
 }
-
-
-/* =========================================================
-   TOP INFORMATION GRID
-   ========================================================= */
-
-.info-grid {
+.quarto-title-block, #quarto-header, .nav-footer { display: none !important; }
+h1, h2, h3, p, figure { margin: 0; }
+h1, h2, h3 { color: inherit; font-family: inherit; }
+.poster {
+  max-width: 1440px;
+  margin-inline: auto;
+  padding: clamp(16px, 2.2vw, 34px);
+}
+.strip {
+  padding: 0 .045em .045em;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+.orange { background: var(--orange); color: var(--ink); }
+.pink { background: var(--pink); color: var(--ink); }
+.cyan { background: var(--cyan); color: var(--ink); }
+.violet { background: var(--violet); color: white; }
+.mustard { background: var(--mustard); color: var(--ink); }
+.name {
+  font-size: clamp(4rem, 10.7vw, 9.6rem);
+  font-weight: 900;
+  line-height: .98;
+  letter-spacing: -.075em;
+}
+.name .strip { display: inline-block; }
+.masthead-bottom {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: .8rem 2rem;
+  margin-top: .25rem;
+}
+.discipline {
+  font-size: clamp(1.7rem, 4.6vw, 4.3rem);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -.06em;
+}
+.location, .meta, .colophon { font-size: .875rem; }
+.location { letter-spacing: .09em; padding-bottom: .15rem; }
+.research {
   display: grid;
-
-  grid-template-columns:
-    minmax(260px, 1.35fr)
-    minmax(180px, 1fr)
-    minmax(220px, 1.2fr)
-    minmax(170px, 1fr);
-
-  column-gap: clamp(18px, 3.2vw, 64px);
-
+  grid-template-columns: minmax(0, 1fr) minmax(160px, 240px);
+  gap: 3rem;
   align-items: start;
-
-  width: 100%;
+  max-width: 1120px;
+  margin-top: clamp(64px, 7vw, 112px);
 }
-
-
-/* Tiny text like reference */
-
-.info-block {
-  min-width: 0;
-
-  position: relative;
-  z-index: 1;
-
-  font-size: clamp(10px, 0.7vw, 11px);
-
-  line-height: 1.04;
-
-  letter-spacing: -0.025em;
+.section-title {
+  border: 0;
+  padding: 0;
+  font-size: clamp(2.8rem, 6vw, 5.4rem);
+  font-weight: 900;
+  letter-spacing: -.065em;
+  line-height: 1.08;
 }
-
-
-.contact {
-  grid-column: 1;
+.research-topics {
+  margin-top: .4rem;
+  font-size: clamp(1.8rem, 3.9vw, 3.5rem);
+  font-weight: 800;
+  letter-spacing: -.055em;
+  line-height: 1.02;
 }
-
-
-.bio {
-  max-width: 420px;
-
-  margin-top: 16px;
-
-  font-size: inherit;
-
-  line-height: 1.15;
-}
-
-
-/* Information groups */
-
-.entry {
-  margin-bottom: 12px;
-  font-weight: 400;
-
-}
-
-.small-gap {
-  height: 7px;
-}
-
-.block-spacer {
-  height: 8px;
-}
-
-
-/* Slight emphasis without changing font */
-
-.label,
-.work-title {
-  font-weight: 500;
-}
-
-
-.institution {
-  font-weight: 500;
-}
-
-
-/* =========================================================
-   LINKS
-   ========================================================= */
-
-a {
-  display: block;
-
-  position: relative;
-
-  width: fit-content;
-
-  color: inherit;
-
-  text-decoration: none;
-
-  transition: color 180ms ease, transform 180ms ease;
-}
-
-a::after {
-  content: "";
-
-  position: absolute;
-  right: 0;
-  bottom: -2px;
-  left: 0;
-
-  height: 1px;
-
-  background: currentColor;
-
-  transform: scaleX(0);
-  transform-origin: left;
-
-  transition: transform 180ms ease;
-}
-
-a:hover {
-  color: var(--blue);
-
-  transform: translateX(2px);
-
-  animation: link-wiggle 420ms ease both;
-}
-
-a:hover::after {
-  transform: scaleX(1);
-}
-
-@keyframes link-wiggle {
-  0%,
-  100% {
-    rotate: 0deg;
-  }
-
-  35% {
-    rotate: -1deg;
-  }
-
-  70% {
-    rotate: 1deg;
-  }
-}
-
-
-/* =========================================================
-   EMPTY MIDDLE
-   ========================================================= */
-
-.page-space {
-  min-height: 0;
-}
-
-
-/* =========================================================
-   FOOTER COMPOSITION
-   ========================================================= */
-
-.footer-grid {
-  display: grid;
-
-  grid-template-columns:
-    minmax(0, 1fr)
-    minmax(180px, 19vw);
-
-  align-items: end;
-
-  gap: 40px;
-
-  width: 100%;
-}
-
-
-/* Portrait and name */
-
-.identity-footer {
-  min-width: 0;
-}
-
+.bio { max-width: 61ch; margin-top: 1.5rem; }
+.portrait-block { padding-top: .7rem; }
 .portrait {
   display: block;
-
-  width: clamp(120px, 9vw, 170px);
+  width: 100%;
+  height: auto;
   aspect-ratio: 1;
-
-  margin-bottom: 12px;
-
   object-fit: cover;
 }
-
-.name {
-  margin: 0;
-
-  padding: 0;
-
-  font-size:
-    clamp(72px, 8vw, 145px);
-
-  font-weight: 400;
-
-  line-height: 0.8;
-
-  ;
-
-  white-space: nowrap;
-
-  color: var(--black);
+.rings {
+  display: block;
+  width: 72px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  margin: 1rem 0 0 auto;
+  background: repeating-radial-gradient(circle, var(--pink) 0 3px, transparent 4px 8px);
 }
-
-
-/* Bottom-right description */
-
-/* =========================================================
-   SUBTLE INTERACTION
-   ========================================================= */
-
-.info-block,
-.name {
-  opacity: 1;
-
-  transition: opacity 180ms ease;
+.writing {
+  margin-top: clamp(64px, 8vw, 120px);
+  margin-left: 8%;
+  max-width: 990px;
 }
-
-
-.info-grid:has(.info-block:hover)
-.info-block:not(:hover) {
-  opacity: 0.55;
+.publication { margin-top: 1.25rem; }
+.meta { font-weight: 600; margin-bottom: .45rem; }
+.publication-title {
+  font-size: clamp(1.8rem, 4vw, 3.6rem);
+  font-weight: 800;
+  line-height: 1.03;
+  letter-spacing: -.05em;
+  max-width: 27ch;
 }
-
-@media (min-width: 801px) and (max-width: 1100px) {
-
-  .info-grid {
-    grid-template-columns:
-      repeat(3, minmax(0, 1fr));
-  }
-
-
-  .bio {
-    max-width: 300px;
-  }
-
-
-  .name {
-    font-size:
-      clamp(64px, 9vw, 96px);
-  }
-
-
-  .portrait {
-    width: 56px;
-  }
-
+.journal { margin-top: 1rem; }
+.credentials {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: clamp(32px, 7vw, 100px);
+  max-width: 1180px;
+  margin-top: clamp(72px, 9vw, 130px);
 }
-
-
-@media (min-width: 801px) {
-
-  html,
-  body {
-    overflow-y: hidden;
-  }
-
+.credentials .section-title { font-size: clamp(2.6rem, 5vw, 4.5rem); }
+.entry { max-width: 44ch; margin-top: 1.75rem; }
+.entry h3 {
+  margin-bottom: .35rem;
+  font-size: clamp(1.3rem, 2.2vw, 1.85rem);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -.035em;
 }
-
-.portrait {
-  opacity: 1;
+.awards { padding-top: 4.5rem; }
+.contact {
+  margin-top: clamp(72px, 9vw, 130px);
+  padding-bottom: 1rem;
 }
-
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
-@media (max-width: 800px) {
-
-  .page {
-    grid-template-rows:
-      auto
-      1fr
-      auto;
-
-    min-height: 100svh;
-
-    min-height: 100dvh;
-
-    padding:
-      10px
-      16px
-      10px;
-  }
-
-
-  .info-grid {
-    grid-template-columns:
-      repeat(2, minmax(0, 1fr));
-
-    gap:
-      8px
-      16px;
-  }
-
-
-  .contact {
-    grid-column: span 2;
-  }
-
-
-  .info-block {
-    font-size: 10px;
-
-    line-height: 1.08;
-  }
-
-
-  .entry {
-    margin-bottom: 8px;
-  }
-
-
-  .page-space {
-    min-height: 0;
-  }
-
-
-  .footer-grid {
-    grid-template-columns: 1fr;
-
-    gap: 14px;
-  }
-
-
-  .name {
-    font-size:
-      clamp(48px, 14vw, 72px);
-
-    line-height: 0.8;
-
-    white-space: normal;
-  }
-
-
-  .portrait {
-    width: clamp(64px, 18vw, 90px);
-
-    margin-bottom: 4px;
-  }
-
-
+.contact-links { margin-top: 1.5rem; }
+a {
+  color: inherit;
+  text-decoration-thickness: 1px;
+  text-underline-offset: .16em;
 }
-
-
-/* =========================================================
-   VERY SMALL SCREENS
-   ========================================================= */
-
-@media (max-width: 480px) {
-
-  .info-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-
-  .name {
-    letter-spacing: -0.065em;
-  }
-
+.contact-links a {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  padding-block: .3rem;
+  font-size: clamp(1rem, 2.7vw, 2.1rem);
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: -.035em;
+  overflow-wrap: anywhere;
 }
-
-
-/* =========================================================
-   ACCESSIBILITY
-   ========================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-  *,
-  *::before,
-  *::after {
-    transition: none !important;
-  }
-
+a:hover { background: var(--cyan); }
+a:focus-visible { outline: 3px solid var(--violet); outline-offset: 5px; }
+.colophon { margin-top: 3rem; letter-spacing: .06em; }
+@media (max-width: 680px) {
+  .name { font-size: clamp(3.25rem, 15vw, 6.3rem); line-height: 1; }
+  .name .strip { display: table; }
+  .masthead-bottom { gap: 1rem; margin-top: .5rem; }
+  .research { grid-template-columns: 1fr; gap: 1.5rem; margin-top: 3.5rem; }
+  .portrait-block { display: flex; align-items: flex-end; gap: 1.5rem; padding: 0; }
+  .portrait { width: 140px; }
+  .rings { margin: 0; width: 56px; }
+  .writing { margin-left: 0; }
+  .credentials { grid-template-columns: 1fr; gap: 3.5rem; }
+  .awards { padding-top: 0; }
+  .bio { line-height: 1.55; }
+}
+@media print {
+  .poster { max-width: none; padding: 0; }
+  .research, .writing, .credentials, .contact { margin-top: 2rem; }
+  .entry, .publication { break-inside: avoid; }
+  .rings { display: none; }
 }
