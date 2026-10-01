@@ -1,120 +1,80 @@
 ---
 title: ""
 page-layout: full
+description: "Isabella Parkes researches modern and contemporary writing, technology and accelerationism at the University of Cambridge."
 ---
 
 ```{=html}
-<canvas id="gradient-canvas" aria-hidden="true"></canvas>
-
-<div class="page">
-
-  <header class="info-grid">
-
-
-
-    <section class="info-block contact" id="contact">
-      <div>Cambridge, UK</div>
-
-      <div class="small-gap"></div>
-
-      <div class="small-gap"></div>
-
-      <a href="mailto:ip451@cam.ac.uk">
-        ip451@cam.ac.uk
-      </a>
-      <a href="mailto:isabellawparkes@gmail.com">
-        isabellawparkes@gmail.com
-      </a>
-
-      <div class="small-gap"></div>
-
-      <a href="https://orcid.org/0009-0004-3506-6250">ORCID</a>
-
-      <div class="bio">
-        Isabella Parkes is a researcher in English literature whose work focuses on modern and contemporary writing, technology and accelerationism. She is currently undertaking a PhD in English at the University of Cambridge, where her research examines the literary history of accelerationism.
-      </div>
-    </section>
-
-
-    <section class="info-block" id="education">
-
-      <div class="entry">
-        <div>2026–</div>
-        <div>PhD English</div>
-        <div class="institution">University of Cambridge</div>
-      </div>
-
-      <div class="entry">
-        <div>2023–2025</div>
-        <div>MA English Literature &</div>
-        <div>American Studies</div>
-        <div class="institution">University of Manchester</div>
-        <div>Distinction</div>
-      </div>
-
-      <div class="entry">
-        <div>2017–2021</div>
-        <div>English Literature</div>
-        <div class="institution">University of Edinburgh</div>
-        <div>First Class</div>
-      </div>
-
-    </section>
-
-
-    <section class="info-block" id="publications">
-
-      <div class="entry">
-        <div>Forthcoming 2027</div>
-
-        <div class="work-title">
-          ‘A poet pure and simple’:
-          Gissing, Class, and the
-          Bohemian Ideal
-        </div>
-
-        <div>
-          <em>Bulletin of the John Rylands Library</em>
-        </div>
-      </div>
-
-      <div class="entry">
-        <div>Awards</div>
-
-        <div class="work-title">
-          Margaret Johnson (Yates)
-          Prize
-        </div>
-        <div>Awarded for the highest dissertation mark in English, American Studies and Creative Writing</div>
-
-        <div class="work-title">
-          Faculty of Humanities
-          Dean's Award for Achievement
-        </div>
-        <div>Awarded by the University of Manchester</div>
-      </div>
-
-    </section>
-
+<div class="poster">
+  <header class="masthead">
+    <h1 class="name"><span class="strip orange">Isabella</span> <span class="strip orange">Parkes</span></h1>
+    <div class="masthead-bottom">
+      <p class="discipline"><span class="strip cyan">English literature</span></p>
+      <p class="location">Cambridge, UK</p>
+    </div>
   </header>
 
-
-  <div class="page-space"></div>
-
-
-  <footer class="footer-grid">
-
-    <div class="identity-footer">
-      <img class="portrait" src="me.jpeg" alt="Isabella Parkes">
-
-      <h1 class="name">
-        Isabella Parkes
-      </h1>
+  <section class="research" aria-labelledby="research-title">
+    <div class="research-copy">
+      <h2 id="research-title" class="section-title"><span class="strip pink">Research</span></h2>
+      <p class="research-topics">Writing, technology<br>&amp; accelerationism</p>
+      <p class="bio">Isabella Parkes is a researcher in English literature whose work focuses on modern and contemporary writing, technology and accelerationism. She is currently undertaking a PhD in English at the University of Cambridge, where her research examines the literary history of accelerationism.</p>
     </div>
+    <figure class="portrait-block">
+      <img class="portrait" src="me.jpeg" alt="Isabella Parkes" width="240" height="240">
+      <span class="rings" aria-hidden="true"></span>
+    </figure>
+  </section>
 
+  <section class="writing" id="publications" aria-labelledby="writing-title">
+    <h2 id="writing-title" class="section-title"><span class="strip violet">Writing</span></h2>
+    <article class="publication">
+      <p class="meta"><span class="strip mustard">Forthcoming 2027</span></p>
+      <h3 class="publication-title">‘A poet pure and simple’:<br>Gissing, Class, and the Bohemian Ideal</h3>
+      <p class="journal"><em>Bulletin of the John Rylands Library</em></p>
+    </article>
+  </section>
+
+  <div class="credentials">
+    <section id="education" aria-labelledby="education-title">
+      <h2 id="education-title" class="section-title"><span class="strip cyan">Education</span></h2>
+      <div class="entry">
+        <p class="meta">2026–</p>
+        <h3>PhD English</h3>
+        <p>University of Cambridge</p>
+      </div>
+      <div class="entry">
+        <p class="meta">2023–2025</p>
+        <h3>MA English Literature &amp; American Studies</h3>
+        <p>University of Manchester<br>Distinction</p>
+      </div>
+      <div class="entry">
+        <p class="meta">2017–2021</p>
+        <h3>English Literature</h3>
+        <p>University of Edinburgh<br>First Class</p>
+      </div>
+    </section>
+    <section class="awards" aria-labelledby="awards-title">
+      <h2 id="awards-title" class="section-title"><span class="strip mustard">Awards</span></h2>
+      <div class="entry">
+        <h3>Margaret Johnson (Yates) Prize</h3>
+        <p>Awarded for the highest dissertation mark in English, American Studies and Creative Writing</p>
+      </div>
+      <div class="entry">
+        <h3>Faculty of Humanities Dean's Award for Achievement</h3>
+        <p>Awarded by the University of Manchester</p>
+      </div>
+    </section>
+  </div>
+
+  <footer id="contact" class="contact" aria-labelledby="contact-title">
+    <h2 id="contact-title" class="section-title"><span class="strip pink">Contact</span></h2>
+    <div class="contact-links">
+      <a href="mailto:ip451@cam.ac.uk">ip451@cam.ac.uk <span aria-hidden="true">↗</span></a>
+      <a href="mailto:isabellawparkes@gmail.com">isabellawparkes@gmail.com <span aria-hidden="true">↗</span></a>
+      <a href="https://orcid.org/0009-0004-3506-6250">ORCID <span aria-hidden="true">↗</span></a>
+    </div>
+    <p class="colophon">Isabella Parkes · Cambridge, UK</p>
   </footer>
-
 </div>
 ```
-
-<script type="module" src="gradient.js"></script>
